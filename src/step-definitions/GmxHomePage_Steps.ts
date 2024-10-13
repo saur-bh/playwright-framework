@@ -12,7 +12,7 @@ When('I enter the {string} into the email field', async (email: string) => {
 
 });
 
-When('I enter the {string} into the field', async (password: string) => {
+When('I enter the {string} into the password field', async (password: string) => {
 
   await pageFixture.page.fill('#pwInput', password);
 

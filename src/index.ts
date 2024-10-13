@@ -4,6 +4,8 @@ import { exec } from "child_process";
 const common = `./src/features/*.feature \
   --require-module ts-node/register \
   --require ./src/step-definitions/**/**/*.ts \
+ -f json:./reports/report.json \
+  --format html:./reports/report.html \
   --require ./src/utils/cucumber-timeout.ts`;
 
 //Define an interface for the profiles object
@@ -16,9 +18,12 @@ interface ProfileCommands {
 const profiles: ProfileCommands = {
     smoke: `${common} --tags "@smoke"`,
     regression: `${common} --tags "@regression"`,
-    invalid: `${common} --tags "@invalid"`,
+    empty: `${common} --tags "@empty"`,
     random: `${common} --tags "@random"`,
-   
+    logout: `${common} --tags "@logout"`,
+    logoutfail: `${common} --tags "@logoutfail"`,
+    logoutpass: `${common} --tags "@logoutpass"`,
+
 }
 
 //Get the third command-line argument and assign it to the profile
@@ -33,13 +38,13 @@ let command = `npx cucumber-js ${profiles[profile as 'smoke' | 'regression' | 'l
 //console.log(command);
 
 //Execute the command
-exec(command, { encoding: 'utf-8'}, (error: Error | null, stdout: string) =>{
-  //Log the output of the command
-  console.log(stdout);
+exec(command, { encoding: 'utf-8' }, (error: Error | null, stdout: string) => {
+    //Log the output of the command
+    console.log(stdout);
 
-  //check if there was an error during execution
-  if(error) {
-    //throw a new error with a simple message
-    throw new Error('💥 Some automation test(s) have failed! - Please review.💥')
-  }
+    //check if there was an error during execution
+    if (error) {
+        //throw a new error with a simple message
+        throw new Error('💥 Some automation test(s) have failed! - Please review.💥')
+    }
 });
