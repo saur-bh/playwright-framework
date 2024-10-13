@@ -1,7 +1,11 @@
+@regression
 Feature: GMX Email Login
-
-    Scenario Outline: Empty email and password
+    Background: Pre-condition
         Given I open the URL "https://www.gmx.net/"
+
+    @invalid
+    Scenario Outline: Empty email and password
+
         When I enter the "<email>" into the email field
         And I enter the "<password>" into the field
         And I click on the Login button
@@ -12,9 +16,9 @@ Feature: GMX Email Login
             |                   |               |
             | valid@example.com |               |
             |                   | validpassword |
+    @random
+    Scenario: Random username and password
 
-    Scenario Outline: Random username and password
-        Given I open the URL "https://www.gmx.net/"
         When I enter a random email into the email field
         And I enter a random password into the password field
         And I click on the Login button
