@@ -34,8 +34,9 @@ This allows the test framework to use the correct environment-specific URL durin
 ## Step 4: Running Tests
 
 To run all the tests, execute the following command in your terminal:
+
 ```
-npm run test
+npm run test smoke | regression | empty |logout | login
 ```
 For running a specific feature file, use:
 ```

@@ -1,4 +1,4 @@
-import {When, Then } from "@cucumber/cucumber";
+import { When, Then } from "@cucumber/cucumber";
 import { pageFixture } from "./hooks/browserContextFixture";
 import { expect } from "@playwright/test";
 import { faker } from "@faker-js/faker"
@@ -26,6 +26,8 @@ When('I click on the Login button', async () => {
 
 
 
+
+
 When('I enter a random email into the email field', async () => {
   const randomEmail = faker.internet.email();
   await pageFixture.page.fill('#mailInput', randomEmail);
@@ -39,3 +41,11 @@ When('I enter a random password into the password field', async () => {
   await pageFixture.page.fill('#pwInput', randomPass);
 });
 
+Then('I should see the action menu', async () =>{
+ // Wait for successful login (this should be replaced with actual login wait conditions)
+ await pageFixture.page.waitForSelector('div[data-test="actions-menu__visible"]', { timeout: 5000 });
+
+ // Assert that the menu is visible after login
+ const isVisible = await pageFixture.page.isVisible('div[data-test="actions-menu__visible"]');
+ expect(isVisible).toBeTruthy();
+});

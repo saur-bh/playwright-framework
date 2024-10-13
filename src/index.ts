@@ -19,6 +19,8 @@ const profiles: ProfileCommands = {
     smoke: `${common} --tags "@smoke"`,
     regression: `${common} --tags "@regression"`,
     empty: `${common} --tags "@empty"`,
+    validlogin: `${common} --tags "@validlogin"`,
+    login: `${common} --tags "@login"`,
     random: `${common} --tags "@random"`,
     logout: `${common} --tags "@logout"`,
     logoutfail: `${common} --tags "@logoutfail"`,
