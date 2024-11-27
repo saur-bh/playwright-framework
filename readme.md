@@ -3,7 +3,7 @@
 
 ## Overview
 
-Welcome to the **Automation-GMX Playwright Framework**! This is a flexible and scalable end-to-end testing framework built with **Playwright** and **Cucumber**, leveraging **TypeScript**. It’s designed for easy setup, extendability, and effective testing for  UI workflows.
+Welcome to the **Automation-Playwright Framework**! This is a flexible and scalable end-to-end testing framework built with **Playwright** and **Cucumber**, leveraging **TypeScript**. It’s designed for easy setup, extendability, and effective testing for  UI workflows.
 
 ### Features
 - **Cross-browser testing** (Chromium, Firefox, WebKit)
