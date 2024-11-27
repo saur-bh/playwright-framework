@@ -1,4 +1,3 @@
-Here is the formatted README.md as per your request:
 
 # Automation-GMX Playwright Framework
 
