@@ -1,5 +1,5 @@
 
-# Automation-GMX Playwright Framework
+# Automation- Playwright Framework
 
 ## Overview
 
